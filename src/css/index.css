@@ -1,0 +1,248 @@
+:root {
+    --bg-color: #081b29;
+    --bg2-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+a {
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    background: var(--bg2-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header .sizing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+header .sizing nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .sizing nav ul li {
+    border: 3px solid transparent;
+    padding: .5rem 2rem;
+    border-radius: 1.5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+header .sizing nav ul li:last-child {
+    border: 3px solid var(--main-color);
+}
+
+header .sizing nav ul li a {
+    transition: .3s;
+}
+
+header .sizing nav ul li a:hover {
+    color: var(--main-color);
+}
+
+div#banner {
+    margin-top: 100px;
+}
+
+div#banner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+div#banner h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+div#banner p {
+    width: 55%;
+    font-size: 17.5px;
+    line-height: 1.5rem;
+}
+
+div#banner .buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2.5rem;
+}
+
+div#banner .buttons button {
+    position: relative;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    font-size: 18px;
+    border: 3px solid var(--main-color);
+    background: transparent;
+    font-weight: 600;
+    color: var(--main-color);
+    transition: color .5s;
+    overflow: hidden;
+}
+
+div#banner .buttons button:first-child {
+    color: var(--bg-color);
+    background: var(--main-color);
+}
+
+div#banner .buttons button:last-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: 0rem;
+    transition: .6s ease-in-out;
+    z-index: -1;
+}
+
+div#banner .buttons button:last-child::before {
+    background: var(--main-color);
+}
+
+div#banner .buttons button:last-child:hover {
+    color: var(--bg-color);
+}
+
+div#banner .buttons button:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: .3rem;
+    transition: .6s ease-in-out;
+    z-index: -1;
+}
+
+div#banner .buttons button:first-child::before {
+    background: var(--main-color);
+}
+
+div#banner .buttons button:first-child:hover {
+    color: var(--bg-color);
+}
+
+div#banner .buttons button:hover::before {
+    width: 100%;
+}
+
+div#profile-image {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    height:400px;
+    width: 400px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--main-color);
+    /* background-image: url(../../public/assets/img/371070716_683604137138046_4474353323915135245_n.jpg); */
+    background-size: cover;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+div#profile-image div {
+    position: absolute;
+    height: 110%;
+    width: 110%;
+    border-top: 3px solid var(--bg2-color);
+    border-bottom: 3px solid var(--bg2-color);
+    border-left: 3px solid var(--main-color);
+    border-right: 3px solid var(--main-color);
+    animation: rotate 10s infinite forwards;
+    animation-delay: initial;
+    border-radius: 50%;
+}
+
+.heigth {
+    height: 1000px;
+    
+}
+
+@media (max-width: 1260px) {
+    header .sizing nav {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 6rem;
+    }
+
+    header .sizing nav ul {
+        gap: 0rem;
+        margin: 0 auto;
+        gap: .5rem;
+    }
+
+    header .sizing nav ul li {
+        padding: .2rem 1rem;
+    }
+    
+    div#banner {
+        text-align: center;
+    }
+
+    div#banner p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    div#banner .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    div#profile-image {
+        width: 70px;
+        height: 70px;
+        top: 1rem;
+    }
+
+    div#profile-image div {
+        width: 130%;
+        height: 130%;
+    }
+}
+
+@media (max-width: 1000px) {
+    header .sizing nav ul li:not(:last-child) {
+        display: none;
+    }
+}
